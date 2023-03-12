@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "RateMyProfessor for CtcLink",
+  "version": "1.0.0",
+  "description": "Adds ratings from ratemyprofessors.com to your ctclink page, when you are looking for classes to enroll into.",
+  "permissions" : ["nativeMessaging"],
+  "host_permissions": ["https://www.ratemyprofessors.com/graphql", "https://csprd.ctclink.us/*"],
+  "content_scripts": [
+     {
+       "matches": ["https://csprd.ctclink.us/*"],
+       "js": ["ctc.js"],
+       "all_frames": true
+     }
+   ],
+  "background": {
+    "service_worker": "rmp.js"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}
